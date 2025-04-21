@@ -1,7 +1,7 @@
 {
   "name": "repl",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/repl/src",
+  "sourceRoot": "scripts/repl/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,10 +10,10 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/apps/repl",
-        "main": "apps/repl/src/main.ts",
-        "tsConfig": "apps/repl/tsconfig.app.json",
-        "assets": ["apps/repl/src/assets"]
+        "outputPath": "dist/scripts/repl",
+        "main": "scripts/repl/src/main.ts",
+        "tsConfig": "scripts/repl/tsconfig.app.json",
+        "assets": []
       },
       "configurations": {
         "production": {
@@ -22,8 +22,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "apps/repl/src/environments/environment.ts",
-              "with": "apps/repl/src/environments/environment.prod.ts"
+              "replace": "scripts/repl/src/environments/environment.ts",
+              "with": "scripts/repl/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -44,14 +44,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/repl/**/*.ts"]
+        "lintFilePatterns": ["scripts/repl/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/repl"],
+      "outputs": ["coverage/scripts/repl"],
       "options": {
-        "jestConfig": "apps/repl/jest.config.ts",
+        "jestConfig": "scripts/repl/jest.config.ts",
         "passWithNoTests": true
       }
     }
